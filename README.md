@@ -76,7 +76,12 @@ INSERT INTO `usuarios` (`userId`, `nome`, `email`, `senha`, `tipo`, `ativo`, `vi
 
 
 
-
+## instalar em dispositivo android
+#### Ainda requer conexão com o servidor para fazer alterações 
+- Abra a o app no navegador do celular
+- Clique nos 3 pontos de configurações (geralmente perto da URL)
+- Clique em instalar aplicativo
+![Instalar App Chrome](assets/print1.jpg?raw=true "Instalar App Chrome")
 
 
 
