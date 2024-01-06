@@ -45,7 +45,7 @@ INSERT INTO `usuarios` (`userId`, `nome`, `email`, `senha`, `tipo`, `ativo`, `vi
 - Se der algum erro me contate em: `juliana@zouli.work`
 
 ###### adendo
-Caso queira, poderá rodar o HTML e o PHP separadamente, a pasta `/api/` é a única que necessita de PHP, se quiser pode colocar em outro servidor. Só lembre de alterar a variável `apiUrl` do arquivo script.js 
+Caso queira, poderá rodar o HTML e o PHP separadamente, a pasta `/api/` é a única que necessita de PHP, se quiser pode colocar em outro servidor. Só lembre de alterar a variável `apiUrl` do arquivo script.js, e liberar o cors no `/api/.htaccess`
 
 
 
@@ -74,6 +74,26 @@ INSERT INTO `usuarios` (`userId`, `nome`, `email`, `senha`, `tipo`, `ativo`, `vi
 - Caso esteja substituindo um campo, defina `ativo`=0 para o campo antigo
 - execute o PHP `/api/cachePages.php` (ele tenta salvar no `../paginas/`, então se for em outro servidor precisa se atentar a isso) 
 
+
+## Inteligencia de dados
+
+- Para utilizar esses dados em pesquisas, siga essa estrutura para a exportação:
+- tabela `pacientes` contém os Pacientes buildados com base no Form 1 (Cadastro de paciente)
+- Onde `pacientes` tem `pacienteForm`, que conecta o paciente com o form respondido
+- Onde `pacienteForm` tem `pacienteFormResposta` onde `cId` é conectado com os `campos` (por isso Não podemos excluir campos somente desativar)
+- Em `pacienteFormResposta` temos duas colunas, a `resposta` que é a coluna completa e aceita textos longos. e a coluna `respostaSearchable` onde é o indice da resposta (os primeiros 32 caracteres). Foi feito dessa maneira para otimizar o algoritmo de indexação do banco de dados. Logo, se quiser buscar todos os pacientes o solteiros do Acre deve fazer:
+```sql
+select pacienteId from pacienteForm where 
+ pFId in (select pFId from pacienteFormResposta where cId = (select cId from campos where fieldName = 'EstadoCivil') and respostaSearchable = 'Solteiro') and 
+ pFId in (select pFId from pacienteFormResposta where cId = (select cId from campos where fieldName = 'Estado') and respostaSearchable = 'Acre') 
+ group by pacienteId;
+```
+
+## Logs
+
+- temos a tabela `logUsuarios` que indica oq o usuario fez, por isso é importante que cada medico tenha o seu usuario
+- Temos logs de visualização de pacientes, pacientes que retornaram na busca. Visualização de formulário.
+- Temos os dados de Ip e data de criação, e nos casos de login temos o UserAgent de login
 
 
 ## instalar em dispositivo android

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="assets/fontawesome.min.css">
+    <!--    <script  src="assets/fontawesome.min.js" defer></script>-->
+    <link href="assets/interFont.css" rel="stylesheet">
+    <title>Pacientes</title>
+    <script  src="assets/jquery-3.7.1.min.js"></script>
+    <script>const checkLogin =1;</script>
+    <script  src="script.js"></script>
+    <script  src="assets/paciente.js"></script>
+    <script defer src="assets/bootstrap.bundle.min.js" ></script>
+
+    <link rel="manifest" href="manifest.json?v=1" />
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="apple-touch-startup-image" href="favicon.png">
+
+</head>
+<body>
+<div id="offlineWarning" style="display: none">você está offline</div>
+    <div class="container-md mx-auto justify-content-center hiddenUntilLogin"  id="paginaPaciente">
+        <div class="container mt-3">
+                <div class="row my-2 pt-3 text-center">
+                    <div class="col-12">
+                        <h1><a href="pacientes.html" class="me-1"><i class="fa-solid fa-backward"></i></a> Paciente</h1>
+                    </div>
+                </div>
+            <div class="row m-2 mt-4">
+                <div class="col-md-6 col-12">
+                    <table class="table">
+                        <tr>
+                            <td>Nome:</td>
+                            <td> <b id="nomePaciente"></b></td>
+                        </tr>
+                        <tr>
+                            <td>Registro HC:</td>
+                            <td> <b  id="registroHc"></b></td>
+                        </tr>
+                        <tr>
+                            <td>Data de Nascimento:</td>
+                            <td> <b  id="dataDeNascimento"></b></td>
+                        </tr>
+                        <tr>
+                            <td>Idade:</td>
+                            <td> <b  id="idade"></b></td>
+                        </tr>
+                        <tr>
+                            <td>Gênero:</td>
+                            <td> <b  id="genero"></b></td>
+                        </tr>
+                        <tr>
+                            <td>Estado Civil:</td>
+                            <td> <b  id="estadoCivil"></b></td>
+                        </tr>
+                        <tr>
+                            <td>Cidade:</td>
+                            <td> <b  id="cidade"></b></td>
+                        </tr>
+                        <tr>
+                            <td>Estado:</td>
+                            <td> <b  id="estado"></b></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="row my-3">
+                        <div class="col-8">
+                            <select onchange="changeButtonUrl()" id="formTypeSel" class="form-select">
+                                <option  value="1" >Formulário de Cadastro</option>
+                                <option selected value="2">Formulário Pós Internação</option>
+                            </select>
+                        </div>
+                       <div class="col-4">
+                           <a id="openNewFormBt" href="#" class="btn btn-success btn-sm" style="display: flex;align-items: center;width: 100px; height: 40px; font-size: 16px;">Preencher</a>
+                       </div>
+                    </div>
+                    <div class="row my-3" id="forms">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

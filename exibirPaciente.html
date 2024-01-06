@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="assets/fontawesome.min.css">
+    <!--    <script  src="assets/fontawesome.min.js" defer></script>-->
+    <link href="assets/interFont.css" rel="stylesheet">
+    <title>Exibir paciente</title>
+    <script  src="assets/jquery-3.7.1.min.js"></script>
+    <script>const checkLogin =1;</script>
+    <script  src="script.js"></script>
+    <script defer src="assets/bootstrap.bundle.min.js" ></script>
+
+    <link rel="manifest" href="manifest.json?v=1" />
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="apple-touch-startup-image" href="favicon.png">
+
+
+</head>
+<body>
+    <div class="container-md mx-auto justify-content-center hiddenUntilLogin" style="max-width: 1000px" id="exibirPaciente">
+        <div class="container mt-3 p-3">
+            <div class="row">
+                <div class="row my-2 text-center">
+                    <div class="col-12">
+                        <h1>Pacientes</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-4 row-cols-md-auto justify-content-start">
+                    <label for="buscaPaciente" class="col--2 col-form-label">Buscar Paciente</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control-sm" id="buscaPaciente" placeholder="">
+                    </div>
+            </div>
+            <div class="row m-4">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Registro HC</th>
+                            <th scope="col">Idade</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>João</td>
+                            <td>123456</td>
+                            <td>31</td>
+                            <td>
+                                <a href="pacientes.html" class="btnPaciente">
+                                   Visualizar Paciente
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>João</td>
+                            <td>123456</td>
+                            <td>31</td>
+                            <td>
+                                <a href="pacientes.html" class="btnPaciente">
+                                    Visualizar Paciente
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>João</td>
+                            <td>123456</td>
+                            <td>31</td>
+                            <td>
+                                <a href="pacientes.html" class="btnPaciente">
+                                    Visualizar Paciente
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

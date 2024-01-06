@@ -1,0 +1,158 @@
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: #CCDBFD;
+}
+span{
+    color: red;
+}
+.hiddenUntilLogin{
+    opacity: 0!important;
+}
+.cP{
+    cursor: pointer;
+}
+
+#offlineWarning {
+    position: absolute;
+    border: 1px solid red;
+    background-color: #ff000075;
+    padding: 10px;
+    left: 5vw;
+    top: 5vh;
+}
+
+.unsetHW{
+    height: unset!important;
+    width: unset!important;
+}
+.buttonAdd{
+    border-radius:50%;
+    background-color: #48cae4;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+#titulo{
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #535353 !important;
+}
+#corpo{
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #535353 !important;
+}
+#form{
+    background-color: #FFFFFF;
+}
+
+
+
+input[type="text"] {
+    border: 2px solid #C1C1C1;
+    padding: 5px;
+    border-radius: 5px;
+}
+input[type="number"] {
+    border: 2px solid #C1C1C1;
+    padding: 5px;
+    border-radius: 5px;
+}
+input[type="date"] {
+    border: 2px solid #C1C1C1;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #535353 !important;
+}
+input::placeholder {
+    font-weight: 300;
+    opacity: 0.5;
+    color: #535353;
+  }
+  
+.select-form{
+    border: 2px solid #C1C1C1;
+    border-radius: 5px;
+    padding: 5px;
+    color: #535353 !important;
+}
+.btn{
+    height: 50px;
+    width: 130px;
+    background-color: #00B4D8;
+    border: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF !important;
+}
+.form-check{
+    font-weight: 300;
+    color: #535353 !important;
+}
+
+#add{
+    color: #00B4D8;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+
+.delete{
+    color: #00B4D8;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.div{
+    display: flex;
+    flex-direction: column;
+}
+
+.btnUsuario{
+    height: 70px;
+    width: 250px;
+    background-color: #00B4D8;
+    border: 0;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF !important;
+}
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    /*background-color: #EDF2FB;*/
+    border-radius: 20px;
+}
+
+.ctnRevisao{
+    max-height: 400px;
+    border-color: #535353;
+}
+#cadastroMedico{
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #535353 !important;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+#login{
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #535353 !important;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}

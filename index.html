@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="assets/fontawesome.min.css">
+    <link href="assets/interFont.css" rel="stylesheet">
+    <title>Sistema Psico</title>
+    <script  src="assets/jquery-3.7.1.min.js"></script>
+    <script   src="script.js"></script>
+    <script defer src="assets/bootstrap.bundle.min.js" ></script>
+
+    <link rel="manifest" href="manifest.json?v=1" />
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="apple-touch-startup-image" href="favicon.png">
+
+</head>
+<body>
+<div class="container  p-5 m-auto center">
+    <div id="offlineWarning" style="display: none">você está offline</div>
+    <div class="container p-3" id="login" style="display: none">
+        <div  class="row m-2 pt-3">
+            <div class="col-12 text-center">
+                <h1>Login</h1>
+            </div>
+        </div>
+        <form id="loginForm" onsubmit="login();return false;">
+        <div class="row m-2 pt-3">
+            <div class="col-12">
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="inputEmail">Email</label>
+                    <input type="email" required minlength="2" id="inputEmail" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-2">
+            <div class="col-12">
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="inputSenha">Senha</label>
+                    <input type="password" required minlength="2" id="inputSenha" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <input type="submit" style="display: none">
+        <div class="row justify-content-md-center pt-2 my-2">
+            <div class="col-auto">
+
+                    <button type="button" onclick="login()" id="loginbt" class="btn btn-primary btn-block mb-4">Entrar</button>
+
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+<script>
+    $.ajax({
+    	type: 'POST',
+    	url: apiUrl + 'users/me.php',
+    	success: async function (data) {
+    		if(data['success'] !== true || typeof data['success']  == "undefined"){
+                document.getElementById('login').style.display ='';
+            }else{
+                forceRedirect('home.html');
+            }
+    	},
+    	error: function (){
+            document.getElementById('login').style.display ='';
+    	}
+    });
+
+
+</script>
+
+</div>
+</body>
+</html>
