@@ -13,7 +13,7 @@ $CFG['rootPath']=dirname(__FILE__)."/";
 $CUI =0;
 
 $CFG['sessionValidity']=16; //em horas
-
+$CFG['version']="1.0.0";
 
 $CFG['salt']='uMbY3xrTwDtVSLaJN2vRHs'; // salt para a criptografia de senhas. recomendavel: 32 chars
 $CFG['hostMysql']='localhost'; // host do mysql
